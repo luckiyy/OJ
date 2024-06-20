@@ -3,10 +3,10 @@
 # @from <a href="https://yupi.icu">编程导航知识星球</a>
 
 -- 创建库
-create database if not exists yuoj;
+create database if not exists project;
 
 -- 切换库
-use yuoj;
+use project;
 
 -- 用户表
 create table if not exists user
