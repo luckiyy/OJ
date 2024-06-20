@@ -23,7 +23,7 @@
     </a-col>
     <a-col flex="100px">
       <div v-if="store.state.user.loginUser?.userName === '未登录'">
-        <a-button @click="goToLogin">登录</a-button>
+        <a-button type="primary" @click="goToLogin">登录</a-button>
       </div>
       <div v-else>
         {{ store.state.user?.loginUser?.userName }}
