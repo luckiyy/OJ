@@ -8,25 +8,36 @@ export default {
   state: () => ({
     loginUser: {
       userName: "未登录",
+      isLogged: false, // 添加是否登录的标志
+      userRole: ACCESS_ENUM.NOT_LOGIN, // 初始用户角色设为未登录
     },
   }),
   actions: {
-    async getLoginUser({ commit, state }, payload) {
-      // 从远程请求获取登录信息
-      const res = await UserControllerService.getLoginUserUsingGet();
-      if (res.code === 0) {
-        commit("updateUser", res.data);
-      } else {
+    async getLoginUser({ commit }, payload) {
+      try {
+        const res = await UserControllerService.getLoginUserUsingGet();
+        if (res.code === 0) {
+          commit("updateUser", { ...res.data, isLogged: true });
+        } else {
+          commit("updateUser", {
+            userName: "未登录",
+            isLogged: false,
+            userRole: ACCESS_ENUM.NOT_LOGIN,
+          });
+        }
+      } catch (error) {
         commit("updateUser", {
-          ...state.loginUser,
+          userName: "未登录",
+          isLogged: false,
           userRole: ACCESS_ENUM.NOT_LOGIN,
         });
+        console.error("Failed to fetch user data:", error);
       }
     },
   },
   mutations: {
     updateUser(state, payload) {
-      state.loginUser = payload;
+      state.loginUser = { ...state.loginUser, ...payload };
     },
   },
 } as StoreOptions<any>;

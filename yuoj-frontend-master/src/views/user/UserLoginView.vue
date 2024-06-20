@@ -21,6 +21,14 @@
         <a-button type="primary" html-type="submit" style="width: 120px">
           登录
         </a-button>
+        <!-- 注册按钮 -->
+        <a-button
+          type="primary"
+          @click="handleRegister"
+          style="width: 120px; margin-left: 120px"
+        >
+          注册
+        </a-button>
       </a-form-item>
     </a-form>
   </div>
@@ -46,7 +54,6 @@ const store = useStore();
 
 /**
  * 提交表单
- * @param data
  */
 const handleSubmit = async () => {
   const res = await UserControllerService.userLoginUsingPost(form);
@@ -58,7 +65,14 @@ const handleSubmit = async () => {
       replace: true,
     });
   } else {
-    message.error("登陆失败，" + res.message);
+    message.error("登录失败，" + res.message);
   }
+};
+
+/**
+ * 处理注册跳转
+ */
+const handleRegister = () => {
+  router.push("/user/register");
 };
 </script>

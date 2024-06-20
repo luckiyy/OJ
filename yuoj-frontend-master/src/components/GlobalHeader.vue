@@ -22,8 +22,11 @@
       </a-menu>
     </a-col>
     <a-col flex="100px">
-      <div>
-        {{ store.state.user?.loginUser?.userName ?? "未登录" }}
+      <div v-if="store.state.user.loginUser?.userName === '未登录'">
+        <a-button @click="goToLogin">登录</a-button>
+      </div>
+      <div v-else>
+        {{ store.state.user?.loginUser?.userName }}
       </div>
     </a-col>
   </a-row>
@@ -78,6 +81,9 @@ const doMenuClick = (key: string) => {
     path: key,
   });
 };
+const goToLogin = () => {
+  router.push("/user/login");
+};
 </script>
 
 <style scoped>
@@ -93,5 +99,16 @@ const doMenuClick = (key: string) => {
 
 .logo {
   height: 48px;
+}
+.a-button {
+  border: none;
+  background-color: #1890ff;
+  color: white;
+  padding: 4px 12px;
+  cursor: pointer;
+}
+
+.a-button:hover {
+  background-color: #40a9ff;
 }
 </style>

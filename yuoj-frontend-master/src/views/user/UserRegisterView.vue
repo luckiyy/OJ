@@ -24,7 +24,11 @@
         />
       </a-form-item>
       <a-form-item>
-        <a-button type="primary" html-type="submit" style="width: 120px">
+        <a-button
+          type="primary"
+          html-type="submit"
+          style="width: 120px; margin-left: 120px"
+        >
           注册
         </a-button>
       </a-form-item>
