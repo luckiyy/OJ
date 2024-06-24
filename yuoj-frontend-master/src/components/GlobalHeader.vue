@@ -25,8 +25,8 @@
       <div v-if="store.state.user.loginUser?.userName === '未登录'">
         <a-button type="primary" @click="goToLogin">登录</a-button>
       </div>
-      <div v-else>
-        {{ store.state.user?.loginUser?.userName }}
+      <div v-else class="user-id-display">
+        用户ID: {{ store.state.user?.loginUser?.id }}
       </div>
     </a-col>
   </a-row>
@@ -110,5 +110,17 @@ const goToLogin = () => {
 
 .a-button:hover {
   background-color: #40a9ff;
+}
+.user-id-display {
+  background-color: #ffffff;
+  border: 1px solid #d9d9d9;
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-size: 14px;
+  color: #595959;
+  margin-right: 20px;
+  float: right;
+  line-height: 1.5;
+  white-space: nowrap;
 }
 </style>
