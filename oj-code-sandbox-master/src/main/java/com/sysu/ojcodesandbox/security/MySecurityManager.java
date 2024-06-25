@@ -1,3 +1,5 @@
+package com.sysu.ojcodesandbox.security;
+
 import java.security.Permission;
 
 public class MySecurityManager extends SecurityManager {
