@@ -12,8 +12,7 @@
           disabled
         >
           <div class="title-bar">
-            <img class="logo" src="../assets/oj-logo.svg" />
-            <div class="title">鱼 OJ</div>
+            <div class="title">OJ</div>
           </div>
         </a-menu-item>
         <a-menu-item v-for="item in visibleRoutes" :key="item.path">
@@ -75,7 +74,7 @@ console.log();
 
 setTimeout(() => {
   store.dispatch("user/getLoginUser", {
-    userName: "鱼皮管理员",
+    userName: "管理员",
     userRole: ACCESS_ENUM.ADMIN,
   });
 }, 3000);
