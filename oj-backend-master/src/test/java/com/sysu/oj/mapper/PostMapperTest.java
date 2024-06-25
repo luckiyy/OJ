@@ -1,6 +1,6 @@
-package com.yupi.yuoj.mapper;
+package com.sysu.oj.mapper;
 
-import com.yupi.yuoj.model.entity.Post;
+import com.sysu.oj.model.entity.Post;
 import java.util.Date;
 import java.util.List;
 import javax.annotation.Resource;

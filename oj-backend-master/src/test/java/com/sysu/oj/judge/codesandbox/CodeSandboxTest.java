@@ -1,9 +1,9 @@
-package com.yupi.yuoj.judge.codesandbox;
+package com.sysu.oj.judge.codesandbox;
 
-import com.yupi.yuoj.judge.codesandbox.impl.RemoteCodeSandbox;
-import com.yupi.yuoj.judge.codesandbox.model.ExecuteCodeRequest;
-import com.yupi.yuoj.judge.codesandbox.model.ExecuteCodeResponse;
-import com.yupi.yuoj.model.enums.QuestionSubmitLanguageEnum;
+import com.sysu.oj.judge.codesandbox.impl.RemoteCodeSandbox;
+import com.sysu.oj.judge.codesandbox.model.ExecuteCodeRequest;
+import com.sysu.oj.judge.codesandbox.model.ExecuteCodeResponse;
+import com.sysu.oj.model.enums.QuestionSubmitLanguageEnum;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Value;

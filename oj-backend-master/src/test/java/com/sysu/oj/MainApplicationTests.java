@@ -1,6 +1,6 @@
-package com.yupi.yuoj;
+package com.sysu.oj;
 
-import com.yupi.yuoj.config.WxOpenConfig;
+import com.sysu.oj.config.WxOpenConfig;
 import javax.annotation.Resource;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
