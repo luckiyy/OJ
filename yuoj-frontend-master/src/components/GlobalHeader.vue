@@ -26,7 +26,10 @@
         <a-button type="primary" @click="goToLogin">登录</a-button>
       </div>
       <div v-else class="user-id-display">
-        用户ID: {{ store.state.user?.loginUser?.id }}
+        用户ID:
+        {{ store.state.user?.loginUser?.id }}
+        <!-- 注销按钮 -->
+        <a-button type="primary" @click="logout">注销</a-button>
       </div>
     </a-col>
   </a-row>
@@ -39,6 +42,7 @@ import { computed, ref } from "vue";
 import { useStore } from "vuex";
 import checkAccess from "@/access/checkAccess";
 import ACCESS_ENUM from "@/access/accessEnum";
+import { UserControllerService } from "../../generated";
 
 const router = useRouter();
 const store = useStore();
@@ -81,8 +85,31 @@ const doMenuClick = (key: string) => {
     path: key,
   });
 };
+
 const goToLogin = () => {
   router.push("/user/login");
+};
+
+// 添加注销事件处理函数
+const logout = async () => {
+  try {
+    const res = await UserControllerService.userLogoutUsingPost();
+    if (res.code === 0 && res.data) {
+      // 检查是否成功注销，并显示对应的消息
+      alert("注销成功");
+      store.commit("updateUser", {
+        userName: "未登录",
+        isLogged: false,
+        userRole: ACCESS_ENUM.NOT_LOGIN,
+      });
+      router.push("/user/login"); // 注销后重定向到登录页面
+    } else {
+      alert(res.message);
+    }
+  } catch (error) {
+    console.error("注销失败:", error);
+    alert("注销过程中发生错误");
+  }
 };
 </script>
 
@@ -112,15 +139,14 @@ const goToLogin = () => {
   background-color: #40a9ff;
 }
 .user-id-display {
-  background-color: #ffffff;
   border: 1px solid #d9d9d9;
-  padding: 8px 16px;
+  background-color: #f0f2f5;
+  padding: 8px 12px;
   border-radius: 4px;
-  font-size: 14px;
+  font-size: 16px;
   color: #595959;
-  margin-right: 20px;
-  float: right;
-  line-height: 1.5;
+  display: inline-block;
+  margin-left: 16px;
   white-space: nowrap;
 }
 </style>

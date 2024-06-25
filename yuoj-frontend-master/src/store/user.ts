@@ -1,4 +1,4 @@
-// 初始状态
+// initial state
 import { StoreOptions } from "vuex";
 import ACCESS_ENUM from "@/access/accessEnum";
 import { UserControllerService } from "../../generated";
@@ -7,10 +7,10 @@ export default {
   namespaced: true,
   state: () => ({
     loginUser: {
-      id: null, // 添加用户 ID
+      id: null, // 用户 ID
       userName: "未登录",
-      isLogged: false,
-      userRole: ACCESS_ENUM.NOT_LOGIN,
+      isLogged: false, // 是否登录的标志
+      userRole: ACCESS_ENUM.NOT_LOGIN, // 初始用户角色设为未登录
     },
   }),
   actions: {
@@ -18,11 +18,9 @@ export default {
       try {
         const res = await UserControllerService.getLoginUserUsingGet();
         if (res.code === 0) {
-          // 除了更新已有的信息，还要添加 id 字段
           commit("updateUser", { ...res.data, isLogged: true });
         } else {
           commit("updateUser", {
-            id: null, // 确保注销或失败时清空 ID
             userName: "未登录",
             isLogged: false,
             userRole: ACCESS_ENUM.NOT_LOGIN,
@@ -30,18 +28,34 @@ export default {
         }
       } catch (error) {
         commit("updateUser", {
-          id: null,
           userName: "未登录",
           isLogged: false,
           userRole: ACCESS_ENUM.NOT_LOGIN,
         });
-        console.error("获取用户数据失败:", error);
+        console.error("Failed to fetch user data:", error);
+      }
+    },
+    async logoutUser({ commit }) {
+      try {
+        const res = await UserControllerService.userLogoutUsingPost();
+        if (res.code === 0 && res.data) {
+          // 注销成功后更新用户状态为未登录
+          commit("updateUser", {
+            id: null,
+            userName: "未登录",
+            isLogged: false,
+            userRole: ACCESS_ENUM.NOT_LOGIN,
+          });
+        } else {
+          console.error("Logout failed:", res.message);
+        }
+      } catch (error) {
+        console.error("Error during logout:", error);
       }
     },
   },
   mutations: {
     updateUser(state, payload) {
-      // 更新 state 中 loginUser 的数据
       state.loginUser = { ...state.loginUser, ...payload };
     },
   },
