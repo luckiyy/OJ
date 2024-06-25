@@ -1,4 +1,4 @@
-package com.yupi.yuojcodesandbox.unsafe;
+package com.sysu.ojcodesandbox.unsafe;
 
 /**
  * 无限睡眠（阻塞程序执行）

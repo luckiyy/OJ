@@ -1,4 +1,4 @@
-package com.yupi.yuojcodesandbox.security;
+package com.sysu.ojcodesandbox.security;
 
 import java.security.Permission;
 
@@ -22,7 +22,7 @@ public class MySecurityManager extends SecurityManager {
     @Override
     public void checkRead(String file) {
         System.out.println(file);
-        if (file.contains("C:\\code\\yuoj-code-sandbox")) {
+        if (file.contains("C:\\code\\oj-code-sandbox")) {
             return;
         }
 //        throw new SecurityException("checkRead 权限异常：" + file);

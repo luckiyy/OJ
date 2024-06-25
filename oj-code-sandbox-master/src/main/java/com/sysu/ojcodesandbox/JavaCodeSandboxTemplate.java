@@ -1,12 +1,12 @@
-package com.yupi.yuojcodesandbox;
+package com.sysu.ojcodesandbox;
 
 import cn.hutool.core.io.FileUtil;
 import cn.hutool.core.util.StrUtil;
-import com.yupi.yuojcodesandbox.model.ExecuteCodeRequest;
-import com.yupi.yuojcodesandbox.model.ExecuteCodeResponse;
-import com.yupi.yuojcodesandbox.model.ExecuteMessage;
-import com.yupi.yuojcodesandbox.model.JudgeInfo;
-import com.yupi.yuojcodesandbox.utils.ProcessUtils;
+import com.sysu.ojcodesandbox.model.ExecuteCodeRequest;
+import com.sysu.ojcodesandbox.model.ExecuteCodeResponse;
+import com.sysu.ojcodesandbox.model.ExecuteMessage;
+import com.sysu.ojcodesandbox.model.JudgeInfo;
+import com.sysu.ojcodesandbox.utils.ProcessUtils;
 import lombok.extern.slf4j.Slf4j;
 
 import java.io.File;

@@ -1,4 +1,4 @@
-package com.yupi.yuojcodesandbox.security;
+package com.sysu.ojcodesandbox.security;
 
 import java.security.Permission;
 

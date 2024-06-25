@@ -1,8 +1,8 @@
-package com.yupi.yuojcodesandbox;
+package com.sysu.ojcodesandbox;
 
 
-import com.yupi.yuojcodesandbox.model.ExecuteCodeRequest;
-import com.yupi.yuojcodesandbox.model.ExecuteCodeResponse;
+import com.sysu.ojcodesandbox.model.ExecuteCodeRequest;
+import com.sysu.ojcodesandbox.model.ExecuteCodeResponse;
 
 /**
  * 代码沙箱接口定义

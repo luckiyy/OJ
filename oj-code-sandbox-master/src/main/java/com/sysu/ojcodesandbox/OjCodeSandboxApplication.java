@@ -1,13 +1,13 @@
-package com.yupi.yuojcodesandbox;
+package com.sysu.ojcodesandbox;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class YuojCodeSandboxApplication {
+public class OjCodeSandboxApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(YuojCodeSandboxApplication.class, args);
+        SpringApplication.run(OjCodeSandboxApplication.class, args);
     }
 
 }

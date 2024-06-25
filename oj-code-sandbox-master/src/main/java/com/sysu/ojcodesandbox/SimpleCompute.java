@@ -1,4 +1,4 @@
-package com.yupi.yuojcodesandbox;
+package com.sysu.ojcodesandbox;
 
 public class SimpleCompute {
 

@@ -1,4 +1,4 @@
-package com.yupi.yuojcodesandbox.model;
+package com.sysu.ojcodesandbox.model;
 
 import lombok.Data;
 

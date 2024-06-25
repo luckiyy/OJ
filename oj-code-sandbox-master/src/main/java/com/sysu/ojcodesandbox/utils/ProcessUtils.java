@@ -1,7 +1,7 @@
-package com.yupi.yuojcodesandbox.utils;
+package com.sysu.ojcodesandbox.utils;
 
 import cn.hutool.core.util.StrUtil;
-import com.yupi.yuojcodesandbox.model.ExecuteMessage;
+import com.sysu.ojcodesandbox.model.ExecuteMessage;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.util.StopWatch;
 

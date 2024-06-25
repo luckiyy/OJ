@@ -1,4 +1,4 @@
-package com.yupi.yuojcodesandbox;
+package com.sysu.ojcodesandbox;
 
 import cn.hutool.core.io.FileUtil;
 import cn.hutool.core.io.resource.ResourceUtil;
@@ -10,11 +10,11 @@ import com.github.dockerjava.api.command.*;
 import com.github.dockerjava.api.model.*;
 import com.github.dockerjava.core.DockerClientBuilder;
 import com.github.dockerjava.core.command.ExecStartResultCallback;
-import com.yupi.yuojcodesandbox.model.ExecuteCodeRequest;
-import com.yupi.yuojcodesandbox.model.ExecuteCodeResponse;
-import com.yupi.yuojcodesandbox.model.ExecuteMessage;
-import com.yupi.yuojcodesandbox.model.JudgeInfo;
-import com.yupi.yuojcodesandbox.utils.ProcessUtils;
+import com.sysu.ojcodesandbox.model.ExecuteCodeRequest;
+import com.sysu.ojcodesandbox.model.ExecuteCodeResponse;
+import com.sysu.ojcodesandbox.model.ExecuteMessage;
+import com.sysu.ojcodesandbox.model.JudgeInfo;
+import com.sysu.ojcodesandbox.utils.ProcessUtils;
 import org.springframework.util.StopWatch;
 
 import java.io.Closeable;
@@ -35,7 +35,7 @@ public class JavaDockerCodeSandboxOld implements CodeSandbox {
 
     private static final long TIME_OUT = 5000L;
 
-    private static final String SECURITY_MANAGER_PATH = "C:\\code\\yuoj-code-sandbox\\src\\main\\resources\\security";
+    private static final String SECURITY_MANAGER_PATH = "C:\\code\\oj-code-sandbox\\src\\main\\resources\\security";
 
     private static final String SECURITY_MANAGER_CLASS_NAME = "MySecurityManager";
 

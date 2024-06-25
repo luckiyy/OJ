@@ -1,8 +1,8 @@
-package com.yupi.yuojcodesandbox.controller;
+package com.sysu.ojcodesandbox.controller;
 
-import com.yupi.yuojcodesandbox.JavaNativeCodeSandbox;
-import com.yupi.yuojcodesandbox.model.ExecuteCodeRequest;
-import com.yupi.yuojcodesandbox.model.ExecuteCodeResponse;
+import com.sysu.ojcodesandbox.JavaNativeCodeSandbox;
+import com.sysu.ojcodesandbox.model.ExecuteCodeRequest;
+import com.sysu.ojcodesandbox.model.ExecuteCodeResponse;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
