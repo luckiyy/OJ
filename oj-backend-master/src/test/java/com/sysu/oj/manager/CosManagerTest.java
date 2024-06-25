@@ -1,4 +1,4 @@
-package com.yupi.yuoj.manager;
+package com.sysu.oj.manager;
 
 import javax.annotation.Resource;
 import org.junit.jupiter.api.Test;

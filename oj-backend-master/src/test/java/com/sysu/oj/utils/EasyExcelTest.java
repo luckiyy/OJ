@@ -1,4 +1,4 @@
-package com.yupi.yuoj.utils;
+package com.sysu.oj.utils;
 
 import com.alibaba.excel.EasyExcel;
 import com.alibaba.excel.support.ExcelTypeEnum;
